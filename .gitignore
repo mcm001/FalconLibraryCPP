@@ -405,3 +405,6 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/c++,gradle,visualstudio
+.project
+.settings/org.eclipse.buildship.core.prefs
+*.prefs
