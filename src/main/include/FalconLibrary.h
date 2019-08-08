@@ -28,6 +28,9 @@
 #include "fl/mathematics/trajectory/TrajectoryGenerator.h"
 #include "fl/mathematics/trajectory/TrajectoryIterator.h"
 
+#include "fl/motors/FalconEncoder.h"
+#include "fl/motors/FalconMotor.h"
+
 #include "fl/types/Interpolatable.h"
 #include "fl/types/VaryInterpolatable.h"
 

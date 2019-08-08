@@ -1,7 +1,5 @@
 #pragma once
 
-#include <SIUnit.h>
-
 namespace fl {
 
 template <class T>
@@ -52,7 +50,7 @@ class FalconMotor {
     void setUseMotionProfileForPosition(bool useMotionProfileForPosition);
     bool getUseMotionProfileForPosition();
 
-    bool follow(motor: FalconMotor);
+    bool follow(FalconMotor& motor);
 
     /**
      * Sets the output [voltage] in volts and [arbitraryFeedForward] in volts

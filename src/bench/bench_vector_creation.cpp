@@ -4,17 +4,16 @@
 
 static constexpr int kVectorSize = 500;
 
-template <typename S>
-struct ConstrainedPose {
-  S      state;
+struct ConstrainedPose2dWithCurvature {
+  fl::Pose2dWithCurvature state;
   double distance         = 0.0;
   double max_velocity     = 0.0;
   double min_acceleration = 0.0;
   double max_acceleration = 0.0;
 
-  ConstrainedPose() {}
+  ConstrainedPose2dWithCurvature() {}
 
-  ConstrainedPose(const S& state, double distance, double max_velocity, double min_acceleration,
+  ConstrainedPose2dWithCurvature(const fl::Pose2dWithCurvature& state, double distance, double max_velocity, double min_acceleration,
                   double max_acceleration) {
     this->state            = state;
     this->distance         = distance;
@@ -23,8 +22,8 @@ struct ConstrainedPose {
     this->max_acceleration = max_acceleration;
   }
 
-  ConstrainedPose(ConstrainedPose& other) = default;
-  ConstrainedPose& operator               =(ConstrainedPose& other) {
+  ConstrainedPose2dWithCurvature(ConstrainedPose2dWithCurvature& other) = default;
+  ConstrainedPose2dWithCurvature& operator               =(ConstrainedPose2dWithCurvature& other) {
     // std::cout << "Copy operator called";
     this->state            = other.state;
     this->distance         = other.distance;
@@ -34,12 +33,12 @@ struct ConstrainedPose {
     return *this;
   }
 
-  ConstrainedPose& operator=(ConstrainedPose&& other) = default;
+  ConstrainedPose2dWithCurvature& operator=(ConstrainedPose2dWithCurvature&& other) = default;
 };
 
 static void BM_VectorReserveAndPushBack(benchmark::State& state) {
   for (auto _ : state) {
-    std::vector<ConstrainedPose<fl::Pose2dWithCurvature>> vector;
+    std::vector<ConstrainedPose2dWithCurvature> vector;
     vector.reserve(kVectorSize);
 
     for (int i = 0; i < kVectorSize; i++) {
@@ -50,7 +49,7 @@ static void BM_VectorReserveAndPushBack(benchmark::State& state) {
 
 static void BM_VectorReserveAndEmplaceBack(benchmark::State& state) {
   for (auto _ : state) {
-    std::vector<ConstrainedPose<fl::Pose2dWithCurvature>> vector;
+    std::vector<ConstrainedPose2dWithCurvature> vector;
     vector.reserve(kVectorSize);
 
     for (int i = 0; i < kVectorSize; i++) {
@@ -61,9 +60,9 @@ static void BM_VectorReserveAndEmplaceBack(benchmark::State& state) {
 
 static void BM_VectorConstructorAndAssignIndices(benchmark::State& state) {
   for (auto _ : state) {
-    std::vector<ConstrainedPose<fl::Pose2dWithCurvature>> vector{kVectorSize};
+    std::vector<ConstrainedPose2dWithCurvature> vector{kVectorSize};
     for (int i = 0; i < kVectorSize; i++) {
-      vector[i] = ConstrainedPose<fl::Pose2dWithCurvature>(fl::Pose2dWithCurvature{}, 1.0 * i, 1.0 * i,
+      vector[i] = ConstrainedPose2dWithCurvature(fl::Pose2dWithCurvature{}, 1.0 * i, 1.0 * i,
                                                            1.0 * i, 1.0 * i);
     }
   }

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <SIUnit.h>
-
 namespace fl {
 
 template <class T>
@@ -26,7 +24,7 @@ class FalconEncoder {
      */
     double rawPosition();
 
-    fun resetPosition(newPosition: Double)
+    void resetPosition(double newPosition);
 
 };  
 } // namespace fl
