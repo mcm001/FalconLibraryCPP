@@ -1,5 +1,7 @@
 #pragma once
 
+#include <FalconLibrary.h>
+
 namespace fl {
 
 template <class T>

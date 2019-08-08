@@ -1,8 +1,10 @@
 #pragma once
 
+#include <FalconLibrary.h>
+
 namespace fl {
 
-template <class T>
+template <fl::SIUnit T>
 class FalconMotor {
 
     /**

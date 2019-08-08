@@ -28,6 +28,9 @@
 #include "fl/mathematics/trajectory/TrajectoryGenerator.h"
 #include "fl/mathematics/trajectory/TrajectoryIterator.h"
 
+#include "fl/mathematics/units/SIUnit.h"
+#include "fl/mathematics/units/SIValue.h"
+
 #include "fl/motors/FalconEncoder.h"
 #include "fl/motors/FalconMotor.h"
 

@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "exception": "cpp",
+        "ios": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "ostream": "cpp",
+        "stdexcept": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp",
+        "vector": "cpp",
+        "xmemory": "cpp"
+    }
+}
